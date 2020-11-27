@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package main;
 
-import complementos.validacion;
+import controller.*;
+import model.*;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -66,6 +67,8 @@ public class GestorSupermercado {
             }
         }
     }
+
+
 
     //M registrar vendedor
     public void ingresarDependientes() {
@@ -199,7 +202,8 @@ public class GestorSupermercado {
         } while (opcion != 5);
     }
 
-    //*******************CLIENTE*******************//
+    // ----------------------------------
+    // CLIENTES
     //menu opciones clientes
     public void mopcion2Admin() {
         System.out.println("\n============= CLIENTE =============\n");
@@ -331,7 +335,8 @@ public class GestorSupermercado {
         } while (opcion != 4);
     }
 
-    //Clientes
+    // ----------------------------------
+    // CLIENTES
     public void mestadFacClientes() {
         System.out.println("\n============= FACTURAS POR CLIENTE =============\n");
         System.out.println("1.-PROMEDIO CONSUMO");
@@ -450,7 +455,8 @@ public class GestorSupermercado {
 
     }
 
-    //******************INVENTARIO******************//
+     // ----------------------------------
+    // INVENTARIO
     //menu opciones Inventario
     public void mopcion3Admin() {
         System.out.println("\n============= INVENTARIO =============\n");
@@ -567,7 +573,8 @@ public class GestorSupermercado {
         supermercado.ingresarInventario(new Productos(new Articulo(codArticulo, nomArticulo, precArticulo), cantArticulo));
     }
 
-    //****************FACTURAS*******************//
+    // ----------------------------------
+    // FACTURAS
     //menu opciones facturado
     public void mopcion4Admin() {
         System.out.println("\n============= FACTURAS =============\n");

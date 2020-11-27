@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package model;
 
 /**
  *
  * @author ASUS
  */
 public class Persona {
-    final String cedPer;
-    String nomPer;
-    String apePer;
-    int edadPer;
-    char sexPer;
+    public final String cedPer;
+    public String nomPer;
+    public String apePer;
+    public int edadPer;
+    public char sexPer;
     
-    Persona(String cedPer,String nomPer,String apePer,int edadPer,char sexPer){
+    public Persona(String cedPer,String nomPer,String apePer,int edadPer,char sexPer){
         this.cedPer=cedPer;
         this.nomPer=nomPer;
         this.apePer=apePer;

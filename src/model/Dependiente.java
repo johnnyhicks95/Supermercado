@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package model;
 
 import java.util.Scanner;
+import controller.Lista;
+import controller.Factura;
+import controller.Inventario;
 
 /**
  *
@@ -14,11 +17,11 @@ import java.util.Scanner;
 public class Dependiente extends Persona {
 
     Scanner entrada = new Scanner(System.in);
-    String contraDep;
-    final String codDep;
-    Lista ventas;
+    public String contraDep;
+    public final String codDep;
+    public Lista ventas;
 
-    Dependiente(String cedDep, String nomDep, String apeDep, int edadDep, char sexDep, String contraDep, String codDep) {
+    public Dependiente(String cedDep, String nomDep, String apeDep, int edadDep, char sexDep, String contraDep, String codDep) {
         super(cedDep, nomDep, apeDep, edadDep, sexDep);
         this.contraDep = contraDep;
         this.codDep = codDep;

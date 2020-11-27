@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package model;
 
 /**
  *
  * @author ASUS
  */
 public class Productos {
-    Articulo articulo;
-    int cantidad;
+    public Articulo articulo;
+    public int cantidad;
     
-    Productos(Articulo articulo, int cantidad){
+    public Productos(Articulo articulo, int cantidad){
         this.articulo=articulo;
         this.cantidad=cantidad;
     }

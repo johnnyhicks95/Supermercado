@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package model;
+import controller.Lista;
+import controller.Factura;
 
 /**
  *
  * @author ASUS
  */
 public class Cliente extends Persona{
-    String telfCli;
-    String dirCli;
-    Lista facturas;
+    public String telfCli;
+    public String dirCli;
+    public Lista facturas;
     
-    Cliente(String cedCli,String nomCli,String apeCli,int edad,char sexCli,String telfCli,String dirCli){
+    public Cliente(String cedCli,String nomCli,String apeCli,int edad,char sexCli,String telfCli,String dirCli){
         super(cedCli,nomCli,apeCli,edad,sexCli);
         this.dirCli=dirCli;
         this.telfCli=telfCli;

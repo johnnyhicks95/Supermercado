@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package controller;
 
+import model.Nodo;
 /**
  *
  * @author ASUS
  */
 public class Lista {
 
-    Nodo primero;
+    public Nodo primero;
 
-    Lista() {
+    public Lista() {
         this.primero = null;
     }
 
-    boolean insertar(Object dato) {
+    public boolean insertar(Object dato) {
         try {
             if (this.primero == null) {
                 this.primero = new Nodo(dato);
@@ -65,7 +66,7 @@ public class Lista {
         return false;
     }
 
-    boolean borrar(int pos) {
+    public boolean borrar(int pos) {
         int posAct = 1;
         if (pos < 1 || this.primero == null) {
             return false;

@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
-
+package controller;
+import model.Persona;
 /**
  *
  * @author ASUS
@@ -17,7 +17,7 @@ public final class Administrador extends Persona {
     public Administrador(String cedAdm, String nomAdm, String apeAdm, int edadAdm, char sexAdm) {
         super(cedAdm, nomAdm, apeAdm, edadAdm, sexAdm);
         this.adminUsuario = "admin";
-        this.adminContrasegna = "12345678";
+        this.adminContrasegna = "1234";
     }
      
     

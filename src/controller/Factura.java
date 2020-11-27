@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package controller;
+
+import model.Cliente;
+import model.Dependiente;
+import model.Productos;
+import model.Nodo;
 
 /**
  *
@@ -12,17 +17,17 @@ package supermercado;
 
 public class Factura implements Comparable<Factura> {
 
-    Lista productosFac;
+    public Lista productosFac;
     String fecFac;
     String codFac;
-    Cliente cliente;
+    public Cliente cliente;
     Dependiente dependiente;
     static int numFac=0;
-    double subTotFac;
-    double IVATotFac;
-    double totFac;
+    public double subTotFac;
+    public double IVATotFac;
+    public double totFac;
 
-    Factura(Dependiente dependiente,Cliente cliente, String fecVen) {
+    public Factura(Dependiente dependiente,Cliente cliente, String fecVen) {
         this.cliente = cliente;
         this.dependiente=dependiente;
         this.fecFac = fecVen;

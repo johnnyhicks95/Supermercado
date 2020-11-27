@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-package supermercado;
+package model;
 
 import java.text.DecimalFormat;
 
@@ -15,13 +15,13 @@ import java.text.DecimalFormat;
  */
 public class Articulo {
 
-    String codArt;
-    String nomArt;
-    double precArt;
-    double IVA;
+    public String codArt;
+    public String nomArt;
+    public double precArt;
+    public double IVA;
     double precFinalArt;
     private final DecimalFormat formato = new DecimalFormat("#.##");;
-    Articulo(String codArt, String nomArt, double precArt) {
+    public Articulo(String codArt, String nomArt, double precArt) {
         this.codArt = codArt;
         this.nomArt = nomArt;
         this.precArt = precArt;

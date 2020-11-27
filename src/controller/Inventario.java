@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package controller;
+
+import model.Productos;
 
 /**
  *
@@ -11,9 +13,9 @@ package supermercado;
  */
 public class Inventario {
     
-    static Lista productos;
+    public static Lista productos;
     
-    Inventario() {
+    public Inventario() {
         productos = new Lista();
     }
 

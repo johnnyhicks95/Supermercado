@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercado;
+package controller;
+
+import model.Cliente;
+import model.Dependiente;
+import model.Productos;
 
 /**
  *
@@ -11,13 +15,13 @@ package supermercado;
  */
 public class Supermercado {
 
-    Lista dependientes;
-    Lista clientes;
-    Lista facturas;
-    Inventario inventario;
-    Administrador administrador;
+    public Lista dependientes;
+    public Lista clientes;
+    public Lista facturas;
+    public Inventario inventario;
+    public Administrador administrador;
 
-    Supermercado() {
+    public Supermercado() {
         dependientes = new Lista();
         clientes = new Lista();
         inventario = new Inventario();
