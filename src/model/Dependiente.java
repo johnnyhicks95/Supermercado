@@ -21,7 +21,10 @@ public class Dependiente extends Persona {
     public final String codDep;
     public Lista ventas;
 
-    public Dependiente(String cedDep, String nomDep, String apeDep, int edadDep, char sexDep, String contraDep, String codDep) {
+    public Dependiente(String cedDep, String nomDep, 
+      String apeDep, int edadDep, char sexDep, 
+      String contraDep, String codDep) {
+          
         super(cedDep, nomDep, apeDep, edadDep, sexDep);
         this.contraDep = contraDep;
         this.codDep = codDep;

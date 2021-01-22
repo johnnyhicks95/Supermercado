@@ -5,8 +5,11 @@
  */
 package main;
 
+// paquetes proyecto
 import controller.*;
 import model.*;
+
+// proyectos java
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -33,6 +36,7 @@ public class GestorSupermercado {
         int opcion;
         do {
             System.out.println("============= SISTEMA DE VENTAS DEL SUPERMERCADO =============\n");
+            System.out.println("==== Menú de Login ====\n");
             System.out.println("1.-INGRESAR AL SISTEMA");
             System.out.println("2.-SALIR\n");
             System.out.print("Opción: ");
@@ -41,21 +45,27 @@ public class GestorSupermercado {
                 case 1:
                     ingresoSistema();
                     break;
+                case 2:
+                    break;
                 default:
-                    System.out.println("\n============= GRACIAS POR USAR EL SISTEMA =============\n");
-            }
+                    System.out.println("--> Opción incorrecta, intente de nuevo");
+                    System.out.println("");
+                    break;
+                }
         } while (opcion != 2);
+        System.out.println("\n==== GRACIAS POR USAR EL SISTEMA ====\n");
     }
 
     //M ingresar al sistema
     public void ingresoSistema() {
-        System.out.println("\n============= INICIAR SESIÓN =============\n");
-        System.out.print("Usuario: ");
+        System.out.println("\n============= ADMINISTRADOR / INICIAR SESIÓN =============\n");
+        System.out.println("==== Ingresar a la cuenta ==== (el admin crea la cuenta del dependiente)\n");
+        System.out.print("Usuario(admin || cod. dep): ");
         String usuario = entrada.next();
-        System.out.print("Contraseña: ");
+        System.out.print("Contraseña(1234): ");
         String contra = entrada.next();
         if (supermercado.administrador.getAdmUsuario().equals(usuario)
-                && supermercado.administrador.getAdmContrasegna().equals(contra)) {
+                && supermercado.administrador.getAdmContrasena().equals(contra)) {
             opcionesAdmin();
         } else {
             auxDep = (Dependiente) supermercado.buscarDependiente(usuario);
@@ -63,7 +73,7 @@ public class GestorSupermercado {
                 System.out.println("Bienvenido " + auxDep.nomPer + " " + auxDep.apePer);
                 opcionesDependiente();
             } else {
-                System.out.println("\nAVISO: Usuario inexistente o contraseña incorrecta\n");
+                System.out.println("\nAVISO! Usuario inexistente o contraseña incorrecta\n");
             }
         }
     }
@@ -109,7 +119,7 @@ public class GestorSupermercado {
         } while (validacion.validarEdadDependiente(edad));
 
         do {
-            System.out.print("Sexo: ");
+            System.out.print("Sexo(M/F): ");
             sexo = entrada.next().toUpperCase().charAt(0);
         } while (validacion.validarGenero(sexo));
 
@@ -122,7 +132,7 @@ public class GestorSupermercado {
 
     //Menu opciones dependientes
     public void mopcion1Admin() {
-        System.out.println("\n============= DEPENDIENTE =============\n");
+        System.out.println("\n============= MENU / ADMIN/ DEPENDIENTE =============\n");
         System.out.println("1.-INGRESAR NUEVO");
         System.out.println("2.-MODIFICAR");
         System.out.println("3.-ELIMINAR");
@@ -195,6 +205,7 @@ public class GestorSupermercado {
                     break;
                 case 4:
                     System.out.println("\n============= LISTADO DE DEPENDIENTES =============\n");
+                    System.out.println("|  C.I  | Nombre |Apellido| Edad | Sexo |");
                     supermercado.imprimirDependientes();
                     break;
 
@@ -206,7 +217,7 @@ public class GestorSupermercado {
     // CLIENTES
     //menu opciones clientes
     public void mopcion2Admin() {
-        System.out.println("\n============= CLIENTE =============\n");
+        System.out.println("\n============= MENU / ADMIN/ CLIENTE =============\n");
         System.out.println("1.-MODIFICAR");
         System.out.println("2.-ELIMINAR");
         System.out.println("3.-LISTAR");
@@ -248,7 +259,7 @@ public class GestorSupermercado {
         } while (validacion.validarEdad(edad));
 
         do {
-            System.out.print("Sexo: ");
+            System.out.print("Sexo(M/F): ");
             sexo = entrada.next().toUpperCase().charAt(0);
         } while (validacion.validarGenero(sexo));
 
@@ -459,7 +470,7 @@ public class GestorSupermercado {
     // INVENTARIO
     //menu opciones Inventario
     public void mopcion3Admin() {
-        System.out.println("\n============= INVENTARIO =============\n");
+        System.out.println("\n============= MENU / ADMIN/ INVENTARIO =============\n");
         System.out.println("1.-INGRESAR NUEVO");
         System.out.println("2.-MODIFICAR");
         System.out.println("3.-ELIMINAR");
@@ -577,7 +588,7 @@ public class GestorSupermercado {
     // FACTURAS
     //menu opciones facturado
     public void mopcion4Admin() {
-        System.out.println("\n============= FACTURAS =============\n");
+        System.out.println("\n============= MENU / ADMIN/ FACTURAS =============\n");
         System.out.println("1.-LISTAR TODAS");
         System.out.println("2.-POR CLIENTES");
         System.out.println("3.-POR DEPENDIENTES");
@@ -685,7 +696,7 @@ public class GestorSupermercado {
     //****************DEPENDIENTES******************//
     //menu dependientes
     public void menuDependiente() {
-        System.out.println("\n============= SISTEMA DE VENTAS DEL SUPERMERCADO =============\n");
+        System.out.println("\n============= SISTEMA DE VENTAS DEL SUPERMERCADO / DEPENDIENTE /=============\n");
         System.out.println("1.-REALIZAR VENTA");
         System.out.println("2.-REVISAR INVENTARIO");
         System.out.println("3.-ANULAR FACTURA");
@@ -715,7 +726,7 @@ public class GestorSupermercado {
     }
 
     public void mfactDependientes() {
-        System.out.println("\n============= FACTURAS POR DEPENDIENTE =============\n");
+        System.out.println("\n============= DEPENDIENTE / MENÚ FACTURAS  =============\n");
         System.out.println("1.-PROMEDIO VENTAS");
         System.out.println("2.-MAYOR MONTO FACTURADO");
         System.out.println("3.-TOTAL VENTA");
@@ -744,7 +755,7 @@ public class GestorSupermercado {
 
     //promedio de ventas del dependiente
     public void promDependiente() {
-        System.out.println("\n============= PROMEDIO DE VENTA =============\n");
+        System.out.println("\n============= DEPENDIENTE / PROMEDIO DE VENTAS =============\n");
         System.out.print("Código dependiente: ");
         String codigo = entrada.next();
         double promFact = 0;
@@ -772,7 +783,7 @@ public class GestorSupermercado {
     }
 
     public void mayorFactDep() {
-        System.out.println("\n============= MAYOR MONTO FACTURADO =============\n");
+        System.out.println("\n============= DEPENDIENTE / MAYOR MONTO FACTURADO =============\n");
         System.out.print("Código dependiente: ");
         String codigo = entrada.next();
         auxDep = supermercado.buscarDependiente(codigo);
@@ -800,7 +811,7 @@ public class GestorSupermercado {
     }
 
     public void totalVentaDep() {
-        System.out.println("\n============= TOTAL VENTA =============\n");
+        System.out.println("\n============= DEPENDIENTE / TOTAL VENTA =============\n");
         System.out.print("Código dependiente: ");
         String codigo = entrada.next();
         auxDep = supermercado.buscarDependiente(codigo);
@@ -843,8 +854,8 @@ public class GestorSupermercado {
             auxCli.guardarFactura(factura);
             supermercado.ingresarFactura(factura);
         } else {
-            System.out.println("\n============= EL CLIENTE NO SE ENCUENTRA REGISTRADO =============");
-            System.out.println("========================= NUEVO CLIENTE =========================\n");
+            System.out.println("\n============= ! El cliente NO se encuentra REGISTRADO ! =============");
+            System.out.println("=============== INGRESAR NUEVO CLIENTE  AL SISTEMA:    ==============\n");
             ingresarCliente();
             auxCli = (Cliente) supermercado.clientes.buscar(cliente);
             Factura factura = new Factura(auxDep, auxCli, fecha);
@@ -860,7 +871,7 @@ public class GestorSupermercado {
         if (auxDep.ventas.primero == null) {
             System.out.println("\nAVISO: No tienes ventas aún\n");
         } else {
-            System.out.println("\n============= TUS FACTURAS =============\n");
+            System.out.println("\n============= DEPENDIENTE / TUS FACTURAS =============\n");
             auxDep.imprimirVentas();
             System.out.print("Número de factura: ");
             String numFac = entrada.next();
@@ -879,7 +890,7 @@ public class GestorSupermercado {
 
     //ADMIN
     public void imprimirMenuAdmin() {
-        System.out.println("\n============= ADMIN =============\n");
+        System.out.println("\n============= MENU / ADMIN =============\n");
         System.out.println("1.-DEPENDIENTE");
         System.out.println("2.-CLIENTE");
         System.out.println("3.-INVENTARIO");

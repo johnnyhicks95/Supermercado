@@ -12,12 +12,13 @@ import model.Persona;
 public final class Administrador extends Persona {
 
     private final String adminUsuario;
-    private final String adminContrasegna;
+    private final String adminContrasena;
     
+    // Administrador1: "1819", "Helder", "Barrera", 20, 'M'
     public Administrador(String cedAdm, String nomAdm, String apeAdm, int edadAdm, char sexAdm) {
         super(cedAdm, nomAdm, apeAdm, edadAdm, sexAdm);
         this.adminUsuario = "admin";
-        this.adminContrasegna = "1234";
+        this.adminContrasena = "1234";
     }
      
     
@@ -25,7 +26,7 @@ public final class Administrador extends Persona {
         return this.adminUsuario;
     }
     
-    public String getAdmContrasegna(){
-        return this.adminContrasegna;
+    public String getAdmContrasena(){
+        return this.adminContrasena;
     }
 }

@@ -16,7 +16,8 @@ public class Persona {
     public int edadPer;
     public char sexPer;
     
-    public Persona(String cedPer,String nomPer,String apePer,int edadPer,char sexPer){
+    public Persona(String cedPer,String nomPer,String apePer,
+      int edadPer,char sexPer){
         this.cedPer=cedPer;
         this.nomPer=nomPer;
         this.apePer=apePer;
